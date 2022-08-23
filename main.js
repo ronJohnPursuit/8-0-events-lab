@@ -7,3 +7,23 @@ for (let i = 0; i < 100; i++) {
 }
 
 // You may write your code here!
+const palette = document.querySelector(`#palette`);
+
+const currentColor = document.querySelector("#current-color");
+
+palette.addEventListener(`click`, (el) => {
+  if (el.target.className === `color`) {
+    currentColor.style.backgroundColor = el.target.style.backgroundColor;
+  }
+});
+const canvas = document.querySelector("#canvas");
+console.log(canvas);
+canvas.addEventListener("click", (event) => {
+  if (
+    event.target.style.backgroundColor === currentColor.style.backgroundColor
+  ) {
+    event.target.style.backgroundColor = "white";
+  } else {
+    event.target.style.backgroundColor = currentColor.style.backgroundColor;
+  }
+});
